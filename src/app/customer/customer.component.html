@@ -1,0 +1,228 @@
+<!-- Customer Registration Form  -->
+
+<!-- Diolog header for registration form -->
+<h2 mat-dialog-title>Add a Customer</h2>
+
+<!-- dialog content -->
+<div mat-dialog-content>
+  <form [formGroup]="customerForm">
+    <!-- First Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input
+        formControlName="firstName"
+        matInput
+        placeholder="Enter your first name"
+      />
+      <mat-error *ngIf="customerForm.controls['firstName'].hasError('required')">
+        Please enter your first name.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['firstName'].hasError('noSpaceAllowed')">
+        First name can not contain a space
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['firstName'].hasError('forbiddenName')">
+        Entered value is not a valid input
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Last Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input
+        formControlName="lastName"
+        matInput
+        placeholder="Enter your last name"
+      />
+      <mat-error *ngIf="customerForm.controls['lastName'].hasError('required')">
+        Please enter your last name.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['lastName'].hasError('noSpaceAllowed')">
+        Last name can not contain a space
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['lastName'].hasError('forbiddenName')">
+        Entered value is not a valid input
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email ID</mat-label>
+      <input
+        formControlName="email"
+        matInput
+        placeholder="Enter your email ID"
+      />
+      <mat-error *ngIf="customerForm.controls['email'].hasError('required')">
+        Please enter your email.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['email'].hasError('noSpaceAllowed')">
+        Email can not contain a space
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['email'].hasError('email')">
+        Enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <!-- DOB -->
+    <mat-form-field appearance="outline">
+      <mat-label>Choose your DOB</mat-label>
+      <input
+        formControlName="dob"
+        matInput
+        [matDatepicker]="dobDatePicker"
+        [max] = "today"
+
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="dobDatePicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #dobDatePicker></mat-datepicker>
+      <mat-error *ngIf="customerForm.controls['dob'].hasError('required')">
+        Please choose a date.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Gender -->
+    <mat-form-field appearance="outline">
+      <mat-label>Gender</mat-label>
+      <input
+        formControlName="gender"
+        matInput
+        placeholder="Enter your gender"
+      />
+      <mat-error *ngIf="customerForm.controls['gender'].hasError('required')">
+        Please enter your gender.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['gender'].hasError('noSpaceAllowed')">
+        gender can not contain a space
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Country -->
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <input
+        formControlName="country"
+        matInput
+        placeholder="Enter your country"
+      />
+      <mat-error *ngIf="customerForm.controls['country'].hasError('required')">
+        Please enter your country.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['country'].hasError('noSpaceAllowed')">
+        country can not contain a space
+      </mat-error>
+    </mat-form-field>
+
+    <!-- State -->
+    <mat-form-field appearance="outline">
+      <mat-label>State</mat-label>
+      <input formControlName="state" matInput placeholder="Enter your state" />
+      <mat-error *ngIf="customerForm.controls['state'].hasError('required')">
+        Please enter your state.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['state'].hasError('noSpaceAllowed')">
+        state can not contain a space
+      </mat-error>
+    </mat-form-field>
+
+    <!-- City -->
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input formControlName="city" matInput placeholder="Enter your city" />
+      <mat-error *ngIf="customerForm.controls['city'].hasError('required')">
+        Please enter your city.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['city'].hasError('noSpaceAllowed')">
+        city can not contain a space
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Address -->
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input
+        formControlName="address"
+        matInput
+        placeholder="Enter your address"
+      />
+      <mat-error *ngIf="customerForm.controls['address'].hasError('required')">
+        Please enter your address.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Pincode -->
+    <mat-form-field appearance="outline">
+      <mat-label>Pincode</mat-label>
+      <input
+        formControlName="pincode"
+        type="number"
+        matInput
+        placeholder="Enter your Pincode"
+      />
+      <mat-error *ngIf="customerForm.controls['pincode'].hasError('required')">
+        Please enter your pincode.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Start Date -->
+    <mat-form-field appearance="outline">
+      <mat-label>Start Date</mat-label>
+      <input
+        formControlName="startDate"
+        matInput
+        [matDatepicker]="startDatePicker"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="startDatePicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #startDatePicker></mat-datepicker>
+      <mat-error *ngIf="customerForm.controls['startDate'].hasError('required')">
+        Please enter your startDate.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['startDate'].hasError('startDateCanNotBeLessThanToday')">
+        Start date can not be less than today.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- End Date -->
+    <mat-form-field appearance="outline">
+      <mat-label>End Date</mat-label>
+      <input
+        formControlName="endDate"
+        matInput
+        [matDatepicker]="endDatePicker"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="endDatePicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #endDatePicker></mat-datepicker>
+      <mat-error *ngIf="customerForm.controls['endDate'].hasError('required')">
+        Please enter your endDate.
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['endDate'].hasError('dateCanNotBeSame')">
+        Start date and End date can not be same
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['endDate'].hasError('endDateCanNotBeLess')">
+        End date can not be less than start date
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+
+  <!-- dialog footer -->
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button
+      style="margin-left: 8px"
+      mat-raised-button
+      color="primary"
+      (click)="addCustomer()"
+    >
+      {{ actionBtn }}
+    </button>
+  </div>
+</div>

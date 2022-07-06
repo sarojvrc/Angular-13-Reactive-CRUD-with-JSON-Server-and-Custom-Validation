@@ -1,0 +1,64 @@
+{
+  "customers": [
+    {
+      "firstName": "Saroj",
+      "lastName": "Behera",
+      "dob": "1996-01-21T18:30:00.000Z",
+      "email": "sarojk@gmail.com",
+      "gender": "Male",
+      "country": "India",
+      "state": "Odisha",
+      "city": "BBSR",
+      "address": "BBSR",
+      "pincode": 756765,
+      "startDate": "2022-07-03T18:30:00.000Z",
+      "endDate": "2022-07-11T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "firstName": "Saroj",
+      "lastName": "Behera",
+      "dob": "2022-06-30T18:30:00.000Z",
+      "email": "saroj.b@gmail.com",
+      "gender": "Male",
+      "country": "India",
+      "state": "Od",
+      "city": "Od",
+      "address": "Od",
+      "pincode": 878787,
+      "startDate": "2022-07-06T18:30:00.000Z",
+      "endDate": "2022-07-07T18:30:00.000Z",
+      "id": 5
+    },
+    {
+      "firstName": "Alex",
+      "lastName": "Mat",
+      "dob": "2022-07-02T18:30:00.000Z",
+      "email": "alex@mat.in",
+      "gender": "Male",
+      "country": "USA",
+      "state": "CA",
+      "city": "SF",
+      "address": "H56th",
+      "pincode": 10012,
+      "startDate": "2022-07-05T18:30:00.000Z",
+      "endDate": "2022-07-06T18:30:00.000Z",
+      "id": 6
+    },
+    {
+      "firstName": "Saroj",
+      "lastName": "Behera",
+      "dob": "2022-06-07T18:30:00.000Z",
+      "email": "saroj@gmail.com",
+      "gender": "Male",
+      "country": "India",
+      "state": "Odisha",
+      "city": "City",
+      "address": "Addfres",
+      "pincode": 786888,
+      "startDate": "2022-07-05T18:30:00.000Z",
+      "endDate": "2022-07-07T18:30:00.000Z",
+      "id": 7
+    }
+  ]
+}
